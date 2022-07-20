@@ -13,64 +13,35 @@ This application is a fully functional Google Books API search engine built with
 
 4. Deploy your application to Heroku with a MongoDB database using MongoDB Atlas. Use the [Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas) walkthrough for instructions.
 
+## Live URL
+
+[Heroku]()
+
+## Screenshot
+![](images/Screenshot.PNG)
+![](images/Screenshot2.PNG)
+
 
 ## Items Completed
-A book search engine with the option to `login/signup`, an `input field to search for books`, and a `submit button`.
+✅ A book search engine with the option to `login/signup`, an `input field to search for books`, and a `save button`.
 
-`login/signup` menu option. A model appears on the screen with a toggle between the option to log in or sign up. 
+✅ `login/signup` menu option. A model appears on the screen with a toggle between the option to log in or sign up. 
 
-`Signing up` requires three inputs for a username, an email address, and a password, with a signup button.
+> *Signup* requires three inputs for a username, an email address, and a password, with a signup button.
 
-`login` requires two inputs for an email adress and a password with a login button.
+> *login* requires two inputs for an email adress and a password with a login button. Once the user is logged in to the site, the menu options change to search for books, and option to see my saved books, and a logout.
 
-`search for books` menu option to search for book and a submit button. The search results, feature a book’s title, author, description, image, and a link to that book on the Google Books site.
+✅ `search for books` menu option to search for book and a submit button. The search results, feature a book’s title, author, description, image, and a link to that book on the Google Books site.
 
+✅ Clicking on the `save button` on a book, allows the user to save the book to the users account each featuring the book’s title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my account
 
+✅ When viewing the books saved to the users account there is a button to `remove a book` from the account. Once clicked, the book is deleted from the account.
 
-
-
-THEN I the modal closes and I am logged in to the site
-WHEN I am logged in to the site
-THEN the menu options change to Search for Books, an option to see my saved books, and Logout
-WHEN I am logged in and enter a search term in the input field and click the submit button
-THEN I am presented with several search results, each featuring a book’s title, author, description, image, and a link to that book on the Google Books site and a button to save a book to my account
-WHEN I click on the Save button on a book
-THEN that book’s information is saved to my account
-WHEN I click on the option to see my saved books
-THEN I am presented with all of the books I have saved to my account, each featuring the book’s title, author, description, image, and a link to that book on the Google Books site and a button to remove a book from my account
-WHEN I click on the Remove button on a book
-THEN that book is deleted from my saved books list
-WHEN I click on the Logout button
-THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button  
-```
-
-
-## Mock-Up
-
-Let's start by revisiting the web application's appearance and functionality.
-
-As you can see in the following animation, a user can type a search term (in this case, "star wars") in a search box and the results appear:
-
-![Animation shows "star wars" typed into a search box and books about Star Wars appearing as results.](./Assets/21-mern-homework-demo-01.gif)
-
-The user can save books by clicking "Save This Book!" under each search result, as shown in the following animation:
-
-![Animation shows user clicking "Save This Book!" button to save books that appear in search results. The button label changes to "Book Already Saved" after it is clicked and the book is saved.](./Assets/21-mern-homework-demo-02.gif)
-
-A user can view their saved books on a separate page, as shown in the following animation:
-
-![The Viewing Lernantino's Books page shows the books that the user Lernaninto has saved.](./Assets/21-mern-homework-demo-03.gif)
-
-
-## Getting Started
-
-In order for this application to use a GraphQL API, you’ll need to refactor the API to use GraphQL on the back end and add some functionality to the front end. The following sections contain details about the files you’ll need to modify on the back end and the front end.
-
-**Important**: Make sure to study the application before building upon it. Better yet, start by making a copy of it. It's already a working application&mdash;you're converting it from RESTful API practices to a GraphQL API.
+✅ When the `logout button` is clicked the user is logged out of the account and is presented with the homepage.
 
 ### Back-End Specifications
 
-You’ll need to complete the following tasks in each of these back-end files:
+Complete the following tasks in each of these back-end files:
 
 * `auth.js`: Update the auth middleware function to work with the GraphQL API.
 
@@ -135,7 +106,7 @@ You’ll need to complete the following tasks in each of these back-end files:
 
 ### Front-End Specifications
 
-You'll need to create the following front-end files:
+Create the following front-end files:
 
 * `queries.js`: This will hold the query `GET_ME`, which will execute the `me` query set up using Apollo Server.
 
@@ -149,7 +120,7 @@ You'll need to create the following front-end files:
 
 	* `REMOVE_BOOK` will execute the `removeBook` mutation.
 
-Additionally, you’ll need to complete the following tasks in each of these front-end files:
+Additionally, complete the following tasks in each of these front-end files:
 
 * `App.js`: Create an Apollo Provider to make every request work with the Apollo Server.
 	
@@ -170,79 +141,3 @@ Additionally, you’ll need to complete the following tasks in each of these fro
 * `SignupForm.js`: Replace the `addUser()` functionality imported from the `API` file with the `ADD_USER` mutation functionality.
 
 * `LoginForm.js`: Replace the `loginUser()` functionality imported from the `API` file with the `LOGIN_USER` mutation functionality.
-
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-	* Has an Apollo Server that uses GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
-
-	* Use an Apollo Server and apply it to the Express.js server as middleware.
-
-	* Include schema settings for resolvers and typeDefs as outlined in the Challenge instructions.
-
-	* Modify the existing authentication middleware to work in the context of a GraphQL API.
-
-	* Use an Apollo Provider so that the application can communicate with the Apollo Server.
-
-	* Application must be deployed to Heroku.
-
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-
-### Application Quality: 15%
-
-* User experience is intuitive and easy to navigate.
-
-* User interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains high-quality README file with description, screenshot, and link to the deployed application.
-
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
