@@ -2,10 +2,22 @@
 
 ## Description
 
-This application is a fully functional Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the **MERN stack** with a `React` front end, `MongoDB` database, and `Node.js/Express.js` server and API. The user will be able to save book searches to the back-end. 
+This application is a fully functional Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the **MERN stack** with a `React` front end, `MongoDB` database, and `Node.js/Express.js` server and API. The user saves book searches to the back-end. 
 
 ## Installation
-1. Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
+1. Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API. [Dependencies](https://www.apollographql.com/docs/react/get-started)
+```
+npm install @apollo/client graphql
+```
+index.js
+```
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: 'https://flyby-gateway.herokuapp.com/',
+  cache: new InMemoryCache(),
+});
+```
 
 2. Modify the existing authentication middleware so that it works in the context of a GraphQL API.
 
