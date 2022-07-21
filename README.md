@@ -9,14 +9,18 @@ This application is a fully functional Google Books API search engine built with
 ```
 npm install @apollo/client graphql
 ```
-index.js
+App.js
 ```
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://flyby-gateway.herokuapp.com/',
+  uri: '/graphql',
   cache: new InMemoryCache(),
 });
+```
+Wrap the return function App.js
+```
+<ApolloProvider client={client}></ApolloProvider>
 ```
 
 2. Modify the existing authentication middleware so that it works in the context of a GraphQL API.

@@ -1,12 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <Router>
+    <ApolloProvider client={client}>
       <>
         <Navbar />
         <Routes>
@@ -24,7 +31,7 @@ function App() {
           />
         </Routes>
       </>
-    </Router>
+    </ApolloProvider>
   );
 }
 
